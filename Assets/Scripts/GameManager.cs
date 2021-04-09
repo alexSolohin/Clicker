@@ -15,10 +15,4 @@ public class GameManager : MonoBehaviour
 			gameSaved.countLevelsOpen = 1;
 		}
 	}
-
-	private void Start()
-	{
-		
-	}
-	
 }

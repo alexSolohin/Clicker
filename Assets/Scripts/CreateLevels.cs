@@ -66,8 +66,8 @@ public class CreateLevels : MonoBehaviour
                 gameSaved.OnLevelHeroTag[i] = "Knight";
             }
         }
-        
     }
+    
     private void SetPortalPosition(GameObject cave)
     {
         if (cave.transform.GetChild(1))

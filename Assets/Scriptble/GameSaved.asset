@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameSaved
   m_EditorClassIdentifier: 
   allMoney: 0
-  countLevelsOpen: 1
+  countLevelsOpen: 18
   OnLevelHeroTag:
   - Knight
   - Knight
