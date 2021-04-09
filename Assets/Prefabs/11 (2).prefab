@@ -404,11 +404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5361863709865773270}
-  - component: {fileID: 8293076728284006320}
-  - component: {fileID: -2954302542348714882}
-  - component: {fileID: -7156820835569006628}
   - component: {fileID: -3904533388899046984}
-  - component: {fileID: 3138170175115103584}
   m_Layer: 0
   m_Name: 11 (2)
   m_TagString: Ballista
@@ -445,49 +441,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8293076728284006320
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4693588701222785644}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.09006702, y: 0.06567331, z: 0.10464481}
-  m_Center: {x: 0.035915088, y: 0.0046563027, z: -0.015892062}
---- !u!54 &-2954302542348714882
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4693588701222785644}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
---- !u!114 &-7156820835569006628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4693588701222785644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04cd492b4a9ed434385522e995ef8668, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrow: {fileID: 3104425823908677486, guid: 9e15c3e8607d843278ad637e5515287d, type: 3}
-  speed: 20
 --- !u!95 &-3904533388899046984
 Animator:
   serializedVersion: 3
@@ -507,20 +460,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3138170175115103584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4693588701222785644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e99782778a33e49b5af375aa6fe881cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  particle: {fileID: 0}
 --- !u!1 &6058354992632344351
 GameObject:
   m_ObjectHideFlags: 0

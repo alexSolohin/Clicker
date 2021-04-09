@@ -1,10 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
-    // [SerializeField] private CaveData data;
     public float speed = 10.0f;
 
     private float _offsetX;
@@ -14,12 +14,7 @@ public class CameraControl : MonoBehaviour
     
     private void Awake()
     {
-        Camera.main.orthographicSize = (float)Screen.height / (float)Screen.width * 10f;
-        
-        float screenAspect = (float) Screen.width / (float) Screen.height;
-        float camHalfHeight = Camera.main.orthographicSize;
-        float camHalfWidth = screenAspect * camHalfHeight;
-        GameManager.Instance.camWidth = 2.0f * camHalfWidth;
+        Camera.main.orthographicSize = (float) Screen.height / (float) Screen.width * 10f;
     }
 
     private void Start()
@@ -28,7 +23,15 @@ public class CameraControl : MonoBehaviour
         _offsetX = transform.position.x;
         _offsetY = transform.position.y;
         _maxY = 1000; // change later
-        // _maxY = data.cavePrefabs.Count * data.iteration * 7.4f;
+    }
+
+    public static float CamWidth()
+    {
+        float screenAspect = (float) Screen.width / (float) Screen.height;
+        float camHalfHeight = Camera.main.orthographicSize;
+        float camHalfWidth = screenAspect * camHalfHeight;
+        float camWidth = 2.0f * camHalfWidth;
+        return camWidth;
     }
     
     private void LateUpdate()
@@ -47,3 +50,4 @@ public class CameraControl : MonoBehaviour
         }
     }
 }
+
