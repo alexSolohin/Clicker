@@ -993,6 +993,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2156180079196142817}
   - component: {fileID: 2156180079205716737}
+  - component: {fileID: 1290347920428538528}
   - component: {fileID: 4133661193628384397}
   m_Layer: 0
   m_Name: Bat Lord
@@ -1070,6 +1071,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1290347920428538528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2156180079196364993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: febc5513c27bc4246845e3cf47f8341e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &4133661193628384397
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -1238,6 +1238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2361259873805617658}
   - component: {fileID: 2361259873796597274}
+  - component: {fileID: 6514655007950383242}
   - component: {fileID: 4394154137887761164}
   m_Layer: 0
   m_Name: Bird
@@ -1284,6 +1285,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6514655007950383242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2361259873805981146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: febc5513c27bc4246845e3cf47f8341e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &4394154137887761164
 BoxCollider:
   m_ObjectHideFlags: 0
