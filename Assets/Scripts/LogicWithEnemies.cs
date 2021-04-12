@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
@@ -9,53 +10,50 @@ using UnityEngine.Jobs;
 public class LogicWithEnemies : MonoBehaviour
 {
     public List<Enemies> enemies;
-    public bool useJob;
-
+    
     private float _targetX;
     
     private void Start()
     {
+        EventManager.Instance.AddListener(EVENT_TYPE.CREATE_ENEMY, AddEnemyToList);
         enemies = new List<Enemies>();
         _targetX = -CameraControl.CamWidth() / 2 + GameManager.OffsetCamWidth;
-        EventManager.Instance.AddListener(EVENT_TYPE.CREATE_ENEMY, AddEnemyToList);
     }
 
     private void Update()
     {
-        if (useJob)
-        {
-            NativeArray<float> speedArr = new NativeArray<float>(enemies.Count, Allocator.TempJob);
-            TransformAccessArray transformAccessArray = new TransformAccessArray(enemies.Count);
-        
-            for (int i = 0; i < enemies.Count; i++)
-            {
-                speedArr[i] = enemies[i].speed;
-                transformAccessArray.Add(enemies[i].transform);
-            }
-            
-            UpdateTransform job = new UpdateTransform
-            {
-                deltaTime = Time.deltaTime,
-                speedArray = speedArr,
-                targetX = _targetX,
-            };
-            
-            JobHandle jobHandle = job.Schedule(transformAccessArray);
-            jobHandle.Complete();
-
-            speedArr.Dispose();
-            transformAccessArray.Dispose();
-        }
-        else
-        {
-            for (int i = 0; i < enemies.Count; i++)
-            {
-                enemies[i].transform.position -= new Vector3(enemies[i].speed * Time.deltaTime, 0, 0);
-            }
-        }
-        
+        JobWorkToTransform();
     }
 
+    
+    /// <summary>
+    /// create a job for transform position all enimies with speed
+    /// </summary>
+    private void JobWorkToTransform()
+    {
+        NativeArray<float> speedArr = new NativeArray<float>(enemies.Count, Allocator.TempJob);
+        TransformAccessArray transformAccessArray = new TransformAccessArray(enemies.Count);
+    
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            speedArr[i] = enemies[i].speed;
+            transformAccessArray.Add(enemies[i].transform);
+        }
+        
+        UpdateTransform job = new UpdateTransform
+        {
+            deltaTime = Time.deltaTime,
+            speedArray = speedArr,
+            targetX = _targetX,
+        };
+        
+        JobHandle jobHandle = job.Schedule(transformAccessArray);
+        jobHandle.Complete();
+
+        speedArr.Dispose();
+        transformAccessArray.Dispose();
+    }
+    
     private void AddEnemyToList(EVENT_TYPE eventType,
         Component sender,
         object param = null)
@@ -63,6 +61,7 @@ public class LogicWithEnemies : MonoBehaviour
         enemies.Add((Enemies)param);
     }
 
+    [BurstCompile]
     public struct UpdateTransform : IJobParallelForTransform
     {
         [ReadOnly] public float deltaTime;

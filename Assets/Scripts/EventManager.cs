@@ -114,4 +114,9 @@ public class EventManager : MonoBehaviour
 
         Listeners = TmpListeners;
     }
+
+    void OnLevelWasLoaded()
+    {
+        RemoveRedundancies();
+    }
 }

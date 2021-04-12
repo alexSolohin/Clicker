@@ -16,7 +16,7 @@ public class CreateEnemies : MonoBehaviour
         EventManager.Instance.AddListener(EVENT_TYPE.CREATE_LVLS, SetLevelList);
         gameSaved = GameObject.Find("GameManager").GetComponent<GameManager>().gameSaved;
         if (gameSaved.Equals(null))
-            print("Don't find GameManager");       
+            print("Don't find GameManager");
     }
     
     private void SetLevelList(EVENT_TYPE eventType,
@@ -32,6 +32,7 @@ public class CreateEnemies : MonoBehaviour
         while (true)
         {
             InitialEnemy();
+            _iterator = 0;
             yield return new WaitForSeconds(1f);
         }
       

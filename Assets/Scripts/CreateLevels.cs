@@ -30,7 +30,7 @@ public class CreateLevels : MonoBehaviour
             CreatePrefabs();
         }
         OpenLevels();
-        SetStartGameData();
+        SetStartGameDataTag();
         EventManager.Instance.PostNotification(EVENT_TYPE.CREATE_LVLS, this, levelsList);
     }
 
@@ -56,7 +56,7 @@ public class CreateLevels : MonoBehaviour
         }    
     }
 
-    private void SetStartGameData()
+    private void SetStartGameDataTag()
     {
         if (gameSaved.OnLevelHeroTag.Length.Equals(0))
         {
