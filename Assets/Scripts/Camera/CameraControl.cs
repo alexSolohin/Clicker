@@ -11,6 +11,8 @@ public class CameraControl : MonoBehaviour
     private float _offsetY;
     private float _offsetZ;
     private float _maxY;
+
+    private GameSaved gameSaved;
     
     private void Awake()
     {
@@ -19,10 +21,11 @@ public class CameraControl : MonoBehaviour
 
     private void Start()
     {
+        gameSaved = GameObject.Find("GameManager").GetComponent<GameManager>().gameSaved;
         _offsetZ = transform.position.z;
         _offsetX = transform.position.x;
         _offsetY = transform.position.y;
-        _maxY = 1000; // change later
+        _maxY = gameSaved.countLevelsOpen * 7.4f; // change later
     }
 
     public static float CamWidth()

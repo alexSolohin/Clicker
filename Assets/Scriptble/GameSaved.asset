@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc2b5e92a49af4d7eaf2ca12a3b1e6ba, type: 3}
   m_Name: GameSaved
   m_EditorClassIdentifier: 
+  levelCount: 0
   allMoney: 0
   countLevelsOpen: 5
   OnLevelHeroTag:
@@ -33,3 +34,15 @@ MonoBehaviour:
   - Knight
   - Knight
   - Knight
+  speedsEnemies:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  timeToSpawn:
+  - 0.5
+  - 1.2
+  - 1.9000001
+  - 2.6000001
+  - 3.3000002
