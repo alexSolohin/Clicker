@@ -10,6 +10,8 @@ public enum EVENT_TYPE
     GAME_PAUSE,
     CREATE_LVLS,
     CREATE_ENEMY,
+    STOP_RUN_ANIM,
+    ATTACK,
 };
 
 public class EventManager : MonoBehaviour

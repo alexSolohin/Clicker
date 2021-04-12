@@ -1238,7 +1238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2361259873805617658}
   - component: {fileID: 2361259873796597274}
-  - component: {fileID: 6514655007950383242}
+  - component: {fileID: 380434239855072539}
   - component: {fileID: 4394154137887761164}
   m_Layer: 0
   m_Name: Bird
@@ -1255,7 +1255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2361259873805981146}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 9, y: 0.5, z: -2}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 2361259873805617656}
@@ -1285,7 +1285,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6514655007950383242
+--- !u!114 &380434239855072539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

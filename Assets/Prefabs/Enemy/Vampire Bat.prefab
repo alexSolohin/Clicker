@@ -786,7 +786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6328325485107800004}
   - component: {fileID: 6328325485100009508}
-  - component: {fileID: -2200895548873006078}
+  - component: {fileID: 4407830617038790539}
   - component: {fileID: 6379041577522246865}
   m_Layer: 0
   m_Name: Vampire Bat
@@ -845,7 +845,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-2200895548873006078
+--- !u!114 &4407830617038790539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

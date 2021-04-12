@@ -13,4 +13,19 @@ public class GameSaved : ScriptableObject
 
 	[Header("на каких уровнях какие герои по тегу")]
 	public string[] OnLevelHeroTag;
+
+	[Header("Массив со временем спавна enemy")]
+	public float[] timeToSpawn;
+
+	public void CreateTimeToSpawn()
+	{
+		if (countLevelsOpen > 0)
+		{
+			timeToSpawn = new float[countLevelsOpen];
+			for (int i = 0; i < timeToSpawn.Length; i++)
+			{
+				timeToSpawn[i] = i;
+			}
+		}
+	}
 }

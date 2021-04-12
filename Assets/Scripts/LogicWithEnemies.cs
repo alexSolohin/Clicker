@@ -9,22 +9,27 @@ using UnityEngine.Jobs;
 
 public class LogicWithEnemies : MonoBehaviour
 {
-    public List<Enemies> enemies;
+    private List<Enemy> enemies;
     
+    private GameSaved gameSaved;
     private float _targetX;
+
+    private Enemy[] enemyAtLevel;
     
     private void Start()
     {
         EventManager.Instance.AddListener(EVENT_TYPE.CREATE_ENEMY, AddEnemyToList);
-        enemies = new List<Enemies>();
+        enemies = new List<Enemy>();
         _targetX = -CameraControl.CamWidth() / 2 + GameManager.OffsetCamWidth;
+        gameSaved = GameObject.Find("GameManager").GetComponent<GameManager>().gameSaved;
+        enemyAtLevel = new Enemy[gameSaved.countLevelsOpen];
     }
 
     private void Update()
     {
         JobWorkToTransform();
     }
-
+    
     
     /// <summary>
     /// create a job for transform position all enimies with speed
@@ -33,7 +38,7 @@ public class LogicWithEnemies : MonoBehaviour
     {
         NativeArray<float> speedArr = new NativeArray<float>(enemies.Count, Allocator.TempJob);
         TransformAccessArray transformAccessArray = new TransformAccessArray(enemies.Count);
-    
+        
         for (int i = 0; i < enemies.Count; i++)
         {
             speedArr[i] = enemies[i].speed;
@@ -49,7 +54,7 @@ public class LogicWithEnemies : MonoBehaviour
         
         JobHandle jobHandle = job.Schedule(transformAccessArray);
         jobHandle.Complete();
-
+        
         speedArr.Dispose();
         transformAccessArray.Dispose();
     }
@@ -58,7 +63,14 @@ public class LogicWithEnemies : MonoBehaviour
         Component sender,
         object param = null)
     {
-        enemies.Add((Enemies)param);
+        enemies.Add((Enemy)param);
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            if (enemies[i].transform.Equals(null))
+            {
+                enemies.RemoveAt(i);
+            }
+        }
     }
 
     [BurstCompile]

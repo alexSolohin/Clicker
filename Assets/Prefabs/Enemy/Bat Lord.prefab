@@ -993,7 +993,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2156180079196142817}
   - component: {fileID: 2156180079205716737}
-  - component: {fileID: 1290347920428538528}
+  - component: {fileID: -8523201391524764408}
   - component: {fileID: 4133661193628384397}
   m_Layer: 0
   m_Name: Bat Lord
@@ -1010,7 +1010,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2156180079196364993}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 9, y: 0.5, z: -2}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 2156180079196142819}
@@ -1071,7 +1071,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1290347920428538528
+--- !u!114 &-8523201391524764408
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
