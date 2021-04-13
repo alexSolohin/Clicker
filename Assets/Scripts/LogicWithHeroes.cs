@@ -6,6 +6,8 @@ using Random = UnityEngine.Random;
 
 public class LogicWithHeroes : MonoBehaviour
 {
+	[SerializeField]
+	private GameObject bloodParticle;
 	private List<GameObject> heroes;
 	
 	private void Start()
@@ -24,10 +26,11 @@ public class LogicWithHeroes : MonoBehaviour
 			Animator animator = heroes[i].GetComponent<Animator>();
 			if (Vector3.Distance(heroes[i].transform.position, target) <= 2.5f)
 			{
-				print("ok");
 				int rand = Random.Range(0, 7);
 				animator.SetInteger("RandomAttack", rand);
-				animator.SetBool("Attack", true);  
+				animator.SetBool("Attack", true);
+				GameObject blood = Instantiate(bloodParticle, target  + new Vector3(0, 1f, 0), Quaternion.identity);
+				Destroy(blood, 1f);
 			}
 			else
 			{
